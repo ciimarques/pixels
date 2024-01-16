@@ -1,5 +1,14 @@
+import Header from "./Components/Header/Header";
+import Palette from "./Components/Palette/Palette";
+
 function App() {
-  return (<div>dd</div>);
+
+  return (
+    <>
+      <Header />
+      <Palette />
+    </>
+  );
 }
 
 export default App;
