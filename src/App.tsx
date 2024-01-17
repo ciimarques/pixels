@@ -1,8 +1,7 @@
-import Header from "./Components/Header/Header";
-import Palette from "./Components/Palette/Palette";
+import Header from './Components/Header/Header';
+import Palette from './Components/Palette/Palette';
 
 function App() {
-
   return (
     <>
       <Header />

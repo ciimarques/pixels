@@ -1,15 +1,14 @@
 import { useEffect, useState } from 'react';
-import { Color } from '../../types'
+import { Color } from '../../types';
 import { generateRandomColor } from '../../service/generateColor';
 
-
-const Palette = () => {
+function Palette() {
   const [colors, setColors] = useState<Color[]>([]);
   const [loading, setLoading] = useState(false);
 
   const initializePalette = () => {
     setLoading(true);
-    const initialColors = Array.from({ length: 10 }, generateRandomColor);
+    const initialColors = ['#000000', ...Array.from({ length: 9 }, generateRandomColor)];
     setLoading(false);
     setColors(initialColors);
   };
@@ -19,7 +18,7 @@ const Palette = () => {
 
   const generatPalette = () => {
     setLoading(true);
-    const generatedColor = colors.map(generateRandomColor);
+    const generatedColor = ['#000000', ...colors.slice(1).map(generateRandomColor)];
     setLoading(false);
     setColors(generatedColor);
   };
@@ -55,6 +54,6 @@ const Palette = () => {
       </button>
     </div>
   );
-};
+}
 
 export default Palette;
