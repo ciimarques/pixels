@@ -30,12 +30,14 @@ function Dashboard() {
   }, [size, additionalRows, pixels]);
 
   const increaseBoardSize = () => {
-    setSize(size + additionalRows);
-    setPixels([]);
+    if (size + additionalRows <= 50) {
+      setSize(size + additionalRows);
+      setPixels([]);
+    }
   };
 
   const decreaseBoardSize = () => {
-    if (size > 1) {
+    if (size - additionalRows >= 5) {
       setSize(size - additionalRows);
       setPixels([]);
     }
@@ -49,6 +51,11 @@ function Dashboard() {
       return pixel;
     });
     setPixels(updatedPixels);
+  };
+
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement | HTMLButtonElement>) => {
+    event.preventDefault();
+    setPixels([]);
   };
 
   return (
@@ -65,6 +72,17 @@ function Dashboard() {
         <button onClick={ increaseBoardSize }>Aumentar Quadro</button>
         <button onClick={ decreaseBoardSize }>Diminuir Quadro</button>
       </div>
+      <span>
+        Quadro:
+        {' '}
+        {size}
+        {' '}
+        x
+        {' '}
+        {size}
+        {' '}
+        Pixels
+      </span>
       <div
         id="pixel-board"
         style={ {
@@ -88,8 +106,8 @@ function Dashboard() {
             tabIndex={ 0 }
             aria-label={ `Select pixel with color ${pixel.color}` }
             onClick={ () => handlePixelClick(pixel.id) }
-            onKeyDown={ (e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
+            onKeyDown={ (event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
                 handlePixelClick(pixel.id);
               }
             } }
@@ -99,7 +117,7 @@ function Dashboard() {
       </div>
       <button
         type="button"
-        onClick={ () => setPixels([]) }
+        onClick={ handleSubmit }
       >
         Limpa Quadro
       </button>
