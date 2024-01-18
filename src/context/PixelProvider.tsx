@@ -7,6 +7,8 @@ type PixelsProviderProps = {
 };
 
 function PixelsProvider({ children }: PixelsProviderProps) {
+  const [selectedColor, setSelectedColor] = useState<string>('#000000');
+  const [loading, setLoading] = useState(false);
   const [colors, setColors] = useState<Color[]>(
     JSON.parse(localStorage.getItem('colors') || '[]'),
   );
@@ -20,15 +22,20 @@ function PixelsProvider({ children }: PixelsProviderProps) {
   useEffect(() => {
     localStorage.setItem('colors', JSON.stringify(colors));
     localStorage.setItem('pixels', JSON.stringify(pixels));
-  }, [colors, pixels]);
+    localStorage.setItem('size', JSON.stringify(size));
+  }, [colors, pixels, size]);
 
   const values = {
     colors,
     setColors,
+    loading,
+    setLoading,
     pixels,
     setPixels,
     size,
     setSize,
+    selectedColor,
+    setSelectedColor,
   };
   return (
     <PixelContext.Provider value={ values }>

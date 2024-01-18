@@ -1,11 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { generateRandomColor } from '../../service/generateColor';
 import usePixels from '../../context/usePixels';
 
 function Palette() {
-  const { colors, setColors } = usePixels();
-  const [loading, setLoading] = useState(false);
-
+  const {
+    colors,
+    setColors,
+    selectedColor,
+    setSelectedColor,
+    loading,
+    setLoading,
+  } = usePixels();
   useEffect(() => {
     const initializePalette = () => {
       setLoading(true);
@@ -37,17 +42,25 @@ function Palette() {
   return (
     <div>
       <h2>Paleta de Cores</h2>
-      <div id="color-palette" style={ { display: 'flex' } }>
+      <div
+        id="color-palette"
+        style={ { display: 'flex' } }
+      >
         { colors.map((color, index) => (
           <div
             key={ index }
-            className="color"
+            className={ `color ${selectedColor === color ? 'selected' : ''}` }
             style={ {
               backgroundColor: color,
               border: '1px solid black',
               width: '50px',
               height: '50px',
             } }
+            onClick={ () => setSelectedColor(color) }
+            onKeyDown={ () => {} }
+            role="button"
+            tabIndex={ 0 }
+            aria-label={ `Select color ${color}` }
           />
         ))}
       </div>
