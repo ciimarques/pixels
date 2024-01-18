@@ -8,8 +8,6 @@ function Palette() {
 
   useEffect(() => {
     const initializePalette = () => {
-      console.log(colors);
-
       setLoading(true);
       if (colors.length === 0) {
         const initialColors = [
