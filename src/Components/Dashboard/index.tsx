@@ -59,20 +59,44 @@ function Dashboard() {
   };
 
   return (
-    <div>
+    <div className="flex flex-col items-center justify-center p-18 my-4">
       <div>
-        <label>
+        <label
+          className="text-gray-700 sm:text-lg lg:text-xl font-mono font-bold"
+        >
           Adicionar Linhas:
           <input
+            className="border-b-8 h-1/2 text-center text-gray-700 px-4 py-3 bg- rounded-lg font-mono font-bold
+            w-full sm:w-auto "
             type="number"
             value={ additionalRows }
             onChange={ (event) => setAdditionalRows(parseInt(event.target.value, 10)) }
           />
         </label>
-        <button onClick={ increaseBoardSize }>Aumentar Quadro</button>
-        <button onClick={ decreaseBoardSize }>Diminuir Quadro</button>
+        <button
+          className="border-b-8 bg-white text-gray-700 px-4 py-3 rounded-lg font-mono font-bold
+          hover:bg-gray-700 hover:text-white transition duration-300 w-full sm:w-auto "
+          onClick={ increaseBoardSize }
+        >
+          Aumentar Quadro
+        </button>
+        <button
+           className="border-b-8  bg-white text-gray-700 px-4 py-3 rounded-lg font-mono font-bold
+           hover:bg-gray-700 hover:text-white transition duration-300 w-full sm:w-auto"
+            onClick={ decreaseBoardSize }
+        >
+          Diminuir Quadro
+        </button>
+        <button
+          className="border-b-8 bg-white text-gray-700 px-4 py-3 bg- rounded-lg font-mono font-bold
+          hover:bg-gray-700 hover:text-white transition duration-300 w-full sm:w-auto"
+          type="button"
+          onClick={ handleSubmit }
+        >
+          Limpa Quadro
+        </button>
       </div>
-      <span>
+      <span className="text-gray-700 my-4 sm:text-lg lg:text-xl font-mono font-bold">
         Quadro:
         {' '}
         {size}
@@ -94,13 +118,9 @@ function Dashboard() {
         {pixels.map((pixel) => (
           <div
             key={ pixel.id }
-            className="pixel"
+            className="border border-black w-10 h-10 cursor-pointer"
             style={ {
               backgroundColor: pixel.color,
-              border: '1px solid black',
-              width: '40px',
-              height: '40px',
-              cursor: 'pointer',
             } }
             role="button"
             tabIndex={ 0 }
@@ -115,12 +135,6 @@ function Dashboard() {
           />
         ))}
       </div>
-      <button
-        type="button"
-        onClick={ handleSubmit }
-      >
-        Limpa Quadro
-      </button>
     </div>
   );
 }
