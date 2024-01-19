@@ -41,7 +41,7 @@ function Palette() {
 
   return (
     <div
-    className="flex flex-col items-center justify-center p-18 my-4"
+      className="flex flex-col items-center justify-center p-18 my-4"
     >
       <h2
         className="text-gray-700 sm:text-2xl my-4 lg:text-3xl font-mono font-bold"
@@ -55,7 +55,8 @@ function Palette() {
         { colors.map((color, index) => (
           <div
             key={ index }
-            className={ `color ${selectedColor === color ? 'selected' : ''}border border-black rounded-full w-8 h-8 sm:w-14 sm:h-14` }
+            className={ `color ${selectedColor === color ? 'selected' : ''}border
+             border-black rounded-full w-8 h-8 sm:w-14 sm:h-14` }
             style={ {
               backgroundColor: color,
             } }
@@ -68,8 +69,9 @@ function Palette() {
         ))}
       </div>
       <button
-         className="border-b-8  bg-white text-gray-700 my-4 px-4 py-3 bg- rounded-lg font-mono font-bold
-         hover:bg-gray-700 hover:text-white transition duration-300 w-full sm:w-auto"
+        className="border-b-8  bg-white text-gray-700 my-4 px-4 py-3 bg- rounded-lg
+        font-bold hover:bg-gray-700 hover:text-white transition duration-300
+        font-mono w-full sm:w-auto "
         onClick={ handleSubmit }
         disabled={ loading }
       >

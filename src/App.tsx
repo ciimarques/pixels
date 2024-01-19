@@ -5,7 +5,7 @@ import Palette from './Components/Palette/index';
 function App() {
   return (
     <div
-    className="bg-imagemfundo min-h-screen bg-cover bg-center"
+      className="bg-imagemfundo min-h-screen bg-cover bg-center"
     >
       <Header />
       <Palette />

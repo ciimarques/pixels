@@ -4,7 +4,7 @@ function Header() {
       className="flex items-center justify-center p-18"
     >
       <h1
-      className="text-gray-700 my-4 sm:text-3xl lg:text-5xl font-mono font-bold"
+        className="text-gray-700 my-4 sm:text-3xl lg:text-5xl font-mono font-bold"
       >
         Pintando com Pixels
       </h1>

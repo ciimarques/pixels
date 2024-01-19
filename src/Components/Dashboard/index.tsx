@@ -66,30 +66,33 @@ function Dashboard() {
         >
           Adicionar Linhas:
           <input
-            className="border-b-8 h-1/2 text-center text-gray-700 px-4 py-3 bg- rounded-lg font-mono font-bold
-            w-full sm:w-auto "
+            className="border-b-8 h-1/2 text-center text-gray-700 px-4 py-3 rounded-lg
+            font-mono font-bold w-full sm:w-auto "
             type="number"
             value={ additionalRows }
             onChange={ (event) => setAdditionalRows(parseInt(event.target.value, 10)) }
           />
         </label>
         <button
-          className="border-b-8 bg-white text-gray-700 px-4 py-3 rounded-lg font-mono font-bold
-          hover:bg-gray-700 hover:text-white transition duration-300 w-full sm:w-auto "
+          className="border-b-8 bg-white text-gray-700 px-4 py-3 rounded-lg font-mono
+          font-bold hover:bg-gray-700 hover:text-white transition duration-300
+          w-full sm:w-auto "
           onClick={ increaseBoardSize }
         >
           Aumentar Quadro
         </button>
         <button
-           className="border-b-8  bg-white text-gray-700 px-4 py-3 rounded-lg font-mono font-bold
-           hover:bg-gray-700 hover:text-white transition duration-300 w-full sm:w-auto"
-            onClick={ decreaseBoardSize }
+          className="border-b-8  bg-white text-gray-700 px-4 py-3 rounded-lg font-mono
+           font-bold hover:bg-gray-700 hover:text-white transition duration-300 w-full
+           sm:w-auto"
+          onClick={ decreaseBoardSize }
         >
           Diminuir Quadro
         </button>
         <button
-          className="border-b-8 bg-white text-gray-700 px-4 py-3 bg- rounded-lg font-mono font-bold
-          hover:bg-gray-700 hover:text-white transition duration-300 w-full sm:w-auto"
+          className="border-b-8 bg-white text-gray-700 px-4 py-3 bg- rounded-lg font-mono
+          font-bold hover:bg-gray-700 hover:text-white transition duration-300
+          w-full sm:w-auto"
           type="button"
           onClick={ handleSubmit }
         >
