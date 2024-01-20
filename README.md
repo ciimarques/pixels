@@ -1,30 +1,45 @@
-# React + TypeScript + Vite
+# Pintando com Pixels
+Explore o ato de pintar com pixels nessa aplicação interativa!
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Imagem](/public/coracao.png)
 
-Currently, two official plugins are available:
+Confira a aplicação em ação: [Pintando com Pixels](http://pintandocompixels.surge.sh/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Responsividade
 
-## Expanding the ESLint configuration
+A aplicação foi projetada para ser responsiva, adaptando-se perfeitamente a dispositivos de diferentes tamanhos e resoluções. Você pode criar arte em pixels em qualquer lugar, seja no seu desktop, tablet ou smartphone.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Instalação
+1 - Clone o repositório
+```sh
+git clone https://github.com/ciimarques/pixels
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2 - Entre na pasta referente ao projeto
+```sh
+cd pixels
+```
+
+3 - Instale as dependências
+```sh
+npm install
+```
+
+### Execução em ambiente de desenvolvimento
+
+1 - Rode a aplicação
+
+```sh
+npm run dev
+```
+
+2 - Aguarde o término da execução do comando anterior e abra o navegador:
+
+- Acesse o endereço http://localhost:5173
+
+## Stack Tecnológico
+- [Node 18](https://nodejs.org/en) - Ambiente de execução JavaScript. Escolhido pela sua eficiência e grande ecossistema de bibliotecas.
+- [React](https://react.dev/) - Biblioteca JavaScript para construir interfaces de usuário interativas com componentes reutilizáveis e gerenciamento eficiente do estado da aplicação.
+- [Vite](https://vitejs.dev/) - Ferramenta de build que oferece um ambiente de desenvolvimento mais rápido.
+- [Tailwind](https://tailwindcss.com/) - Framework CSS focado em classes utilitárias para criação rápida de designs personalizados.
+- [Typescript](https://www.typescriptlang.org/) - Adiciona tipagem estática ao JavaScript, tornando o código mais seguro e fácil de manter.
