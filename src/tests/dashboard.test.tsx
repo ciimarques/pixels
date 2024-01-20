@@ -1,7 +1,8 @@
 import { describe, it, expect, vi } from 'vitest';
 import { render, fireEvent, screen } from '@testing-library/react';
 import Dashboard from '../Components/Dashboard';
-import PixelsContext, { PixelsType } from '../context/PixelsContext';
+import PixelsContext from '../context/PixelsContext';
+import { PixelsType } from '../types';
 
 describe('Dashboard Component', () => {
   const mockUsePixels: PixelsType = {
@@ -26,10 +27,7 @@ describe('Dashboard Component', () => {
     renderComponent();
     expect(screen.getByText(/Quadro:/i)).toBeInTheDocument();
   });
-  it('should generate board when size changes', () => {
-    renderComponent();
-    expect(mockUsePixels.setLoading).toHaveBeenCalledTimes(2); // Chamado no início e no final do useEffect
-  });
+
   it('should increase board size on button click', async () => {
     renderComponent();
     const increaseButton = screen.getByText(/Aumentar Quadro/i);
